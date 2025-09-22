@@ -7,5 +7,17 @@ elif [ "$BRIGHTNESS_VALUE" -lt 70 ]; then
 else 
     BRIGHTNESS_ICON=''
 fi
-source ~/Code/Scripts/polybar/extract-colors.sh
+
+# extracting colors
+eval "$(
+  awk -F '=' '
+    /^[^#].*=.*/ {
+      key=$1; val=$2
+      gsub(/^[ \t]+|[ \t]+$/, "", key)
+      gsub(/^[ \t]+|[ \t]+$/, "", val)
+      printf "%s=%s\n", toupper(key), val
+    }
+  ' ~/.config/polybar/colors.ini
+)"
+
 echo "%{B$BLUE}%{F$BACKGROUND} $BRIGHTNESS_ICON %{F-}%{B-} $BRIGHTNESS_VALUE% "

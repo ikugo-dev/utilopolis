@@ -1,5 +1,5 @@
 #!/bin/bash
-MONITOR_STATE=$(~/Code/Scripts/i3/detect-monitor.sh)
+MONITOR_STATE=$(dirname "$0" + ../detect-monitor.sh)
 if [[ $MONITOR_STATE == "PRIMARY" || $MONITOR_STATE == "NONE" ]]; then
     BRIGHTNESS_VALUE=0
 else

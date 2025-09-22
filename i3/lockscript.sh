@@ -3,7 +3,7 @@ if pgrep -x i3lock >/dev/null; then
     exit
 fi
 
-MONITOR_STATE=$(dirname "$0" + ../detect-monitor.sh)
+MONITOR_STATE="$("$(dirname "$0")/../detect-monitor.sh")"
 
 if [[ $MONITOR_STATE == "PRIMARY" ]]; then
     i3lock -n -e -k \

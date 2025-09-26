@@ -1,6 +1,6 @@
 #!/bin/bash
-E_DP_ON=$(xrandr --listmonitors | grep -q "eDP" && echo "yes" || echo "no")
-HDMI_ON=$(xrandr --listmonitors | grep -q "HDMI-A-0" && echo "yes" || echo "no")
+E_DP_ON=$(xrandr | grep " connected " | grep -q "eDP" && echo "yes" || echo "no")
+HDMI_ON=$(xrandr | grep " connected " | grep -q "HDMI-A-0" && echo "yes" || echo "no")
 if [[ "$E_DP_ON" == "yes" && "$HDMI_ON" == "yes"  ]]; then
     echo "BOTH"
 elif [[ "$E_DP_ON" == "yes" && "$HDMI_ON" == "no"  ]]; then

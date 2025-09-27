@@ -1,12 +1,14 @@
 #!/bin/bash
-E_DP_ON=$(xrandr | grep " connected " | grep -q "eDP" && echo "yes" || echo "no")
-HDMI_ON=$(xrandr | grep " connected " | grep -q "HDMI-A-0" && echo "yes" || echo "no")
-if [[ "$E_DP_ON" == "yes" && "$HDMI_ON" == "yes"  ]]; then
+PRIMARY="eDP-1"
+SECONDARY="HDMI-1"
+PRIMARY_ON=$(xrandr | grep " connected " | grep -q "$PRIMARY" && echo "yes" || echo "no")
+SECONDARY_ON=$(xrandr | grep " connected " | grep -q "$SECONDARY-1" && echo "yes" || echo "no")
+if [[ "$PRIMARY_ON" == "yes" && "$SECONDARY_ON" == "yes"  ]]; then
     echo "BOTH"
-elif [[ "$E_DP_ON" == "yes" && "$HDMI_ON" == "no"  ]]; then
+elif [[ "$PRIMARY_ON" == "yes" && "$SECONDARY_ON" == "no"  ]]; then
     echo "PRIMARY"
-elif [[ "$E_DP_ON" == "no" && "$HDMI_ON" == "yes"  ]]; then
+elif [[ "$PRIMARY_ON" == "no" && "$SECONDARY_ON" == "yes"  ]]; then
     echo "SECONDARY"
-elif [[ "$E_DP_ON" == "no" && "$HDMI_ON" == "no"  ]]; then
+elif [[ "$PRIMARY_ON" == "no" && "$SECONDARY_ON" == "no"  ]]; then
     echo "NONE"
 fi

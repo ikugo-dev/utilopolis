@@ -1,8 +1,15 @@
 #!/bin/bash
 PRIMARY="eDP-1"
 SECONDARY="HDMI-1"
-PRIMARY_ON=$(xrandr | grep " connected " | grep -q "$PRIMARY" && echo "yes" || echo "no")
-SECONDARY_ON=$(xrandr | grep " connected " | grep -q "$SECONDARY-1" && echo "yes" || echo "no")
+ACTIVE=$(xrandr --listactivemonitors | awk 'NR>1 {print $4}')
+
+PRIMARY_ON="no"
+SECONDARY_ON="no"
+for mon in $ACTIVE; do
+    [[ $mon == "$PRIMARY" ]] && PRIMARY_ON="yes"
+    [[ $mon == "$SECONDARY" ]] && SECONDARY_ON="yes"
+done
+
 if [[ "$PRIMARY_ON" == "yes" && "$SECONDARY_ON" == "yes"  ]]; then
     echo "BOTH"
 elif [[ "$PRIMARY_ON" == "yes" && "$SECONDARY_ON" == "no"  ]]; then

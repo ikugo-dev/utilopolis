@@ -15,3 +15,5 @@ elif [[ $MONITOR_STATE == "PRIMARY" ||
     xrandr --output "$PRIMARY" --off \
            --output "$SECONDARY" --auto
 fi
+
+i3-msg restart

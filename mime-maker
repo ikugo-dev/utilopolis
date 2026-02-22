@@ -1,0 +1,11 @@
+#!/bin/bash
+
+types=("application/vnd.oasis.opendocument.image" "application/*" "string" "image/*" "video/*" "text/*" "x-scheme-handler/discord")
+apps=("feh.desktop" "zaread.desktop" "zaread.desktop" "feh.desktop" "mpv.desktop" "nvim.desktop" "vesktop.desktop")
+for i in $(seq 0 6);
+do
+    for type in $(grep ^${types[i]} /usr/share/mime/types); do
+        xdg-mime default "${apps[i]}" "$type"
+    done
+done
+

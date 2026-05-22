@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 BRIGHTNESS_VALUE=$1
 if [ "$BRIGHTNESS_VALUE" -lt 30 ]; then
     BRIGHTNESS_ICON=''

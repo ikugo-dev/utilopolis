@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if [ $# != 3 ]; then
     echo "Usage $0 up/down value"
 fi

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 if pgrep -x i3lock >/dev/null; then
     exit
 fi

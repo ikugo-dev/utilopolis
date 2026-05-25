@@ -8,16 +8,5 @@ else
     BRIGHTNESS_ICON=''
 fi
 
-# extracting colors
-eval "$(
-  awk -F '=' '
-    /^[^#].*=.*/ {
-      key=$1; val=$2
-      gsub(/^[ \t]+|[ \t]+$/, "", key)
-      gsub(/^[ \t]+|[ \t]+$/, "", val)
-      printf "%s=%s\n", toupper(key), val
-    }
-  ' ~/.config/polybar/colors.ini
-)"
-
+eval "$(~/Code/Scripts/polybar/colors.sh)"
 echo "%{B$BLUE}%{F$BACKGROUND} $BRIGHTNESS_ICON %{F-}%{B-} $BRIGHTNESS_VALUE% "

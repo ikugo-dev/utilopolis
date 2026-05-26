@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PRIMARY="eDP-1"
-SECONDARY="HDMI-1"
+PRIMARY="eDP"
+SECONDARY="HDMI-A-0"
 
 MONITOR_STATE="$("$(dirname "$0")/../detect-monitor.sh")"
 

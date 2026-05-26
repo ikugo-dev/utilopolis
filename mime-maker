@@ -1,5 +1,4 @@
 #!/bin/sh
-
 pairs="\
 application/vnd.oasis.opendocument.image:feh.desktop
 x-scheme-handler/discord:vesktop.desktop

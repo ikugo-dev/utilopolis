@@ -1,6 +1,6 @@
 #!/bin/sh
-PRIMARY="eDP-1"
-SECONDARY="HDMI-1"
+PRIMARY="eDP"
+SECONDARY="HDMI-A-0"
 ACTIVE=$(xrandr --listactivemonitors | awk 'NR>1 {print $4}')
 
 PRIMARY_ON="no"

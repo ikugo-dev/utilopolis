@@ -10,7 +10,8 @@ text/:nvim.desktop"
 echo "$pairs" | while IFS=":" read -r types app ; do
     grep ^"$types" /usr/share/mime/types |
         while read -r type; do
-            echo "$app" "->" "$type"
+            # echo "$app" "->" "$type"
+            echo "xdg-mime default $app $type"
             xdg-mime default "$app" "$type"
     done
 done

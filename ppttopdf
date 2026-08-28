@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <path>"
+    exit 1
+fi
+path=$1
+
+find "$path" -type f \( -name "*.ppt" -o -name "*.pptx" \) -exec soffice --convert-to pdf {} \;

@@ -22,8 +22,8 @@ case "$1" in
     ;;
   "")
     bash "$0" list | \
-        dmenu -fn "Hurmit Nerd Font-12" \
-            -nb "#0B0E14" -nf "#BFBDB6" -sb "#FF8F40" -sf "#0B0E14" \
+
+        ~/Code/Scripts/i3/dmenu-color.sh \
             -p 'Emoji: ' \
         | bash "$0" copy
     ;;

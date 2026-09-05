@@ -2,8 +2,7 @@
 
 while [ "$select" != "No" ] && [ "$select" != "Yes" ]; do
     select=$(printf "No\nYes" | \
-        dmenu -fn "Hurmit Nerd Font-12" \
-            -nb "#0B0E14" -nf "#BFBDB6" -sb "#FF8F40" -sf "#0B0E14" \
+        ~/Code/Scripts/i3/dmenu-color.sh \
             -p "You pressed the reboot shortcut. Do you really want to reboot i3? This will end your X session.")
     if [ -z "$select" ]; then
         exit 0

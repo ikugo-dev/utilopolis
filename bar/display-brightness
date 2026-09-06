@@ -8,5 +8,4 @@ else
     BRIGHTNESS_ICON=''
 fi
 
-eval "$(~/Code/Scripts/polybar/colors.sh)"
-echo "%{B$BLUE}%{F$BACKGROUND} $BRIGHTNESS_ICON %{F-}%{B-} $BRIGHTNESS_VALUE% "
+echo "$BRIGHTNESS_ICON $BRIGHTNESS_VALUE% "

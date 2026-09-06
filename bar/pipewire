@@ -1,5 +1,5 @@
 #!/bin/sh
-eval "$(~/Code/Scripts/polybar/colors.sh)"
+eval "$(~/Code/Scripts/polybar/colors)"
 
 VOL=$(wpctl get-volume @DEFAULT_AUDIO_SINK@)
 

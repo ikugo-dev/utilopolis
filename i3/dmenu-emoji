@@ -23,7 +23,7 @@ case "$1" in
   "")
     bash "$0" list | \
 
-        ~/Code/Scripts/i3/dmenu-color.sh \
+        dmenu-color \
             -p 'Emoji: ' \
         | bash "$0" copy
     ;;

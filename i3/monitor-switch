@@ -2,8 +2,7 @@
 
 PRIMARY="eDP-1"
 SECONDARY="HDMI-1"
-
-MONITOR_STATE="$("$(dirname "$0")/../detect-monitor.sh")"
+MONITOR_STATE=$(detect-monitor)
 
 if [ "$MONITOR_STATE" = "SECONDARY" ] ||
         [ "$MONITOR_STATE" = "NONE" ] ||

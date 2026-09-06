@@ -1,0 +1,18 @@
+#!/bin/sh
+
+file=$(mktemp)
+
+WALLPAPER_DIR=$HOME/.config/.wallpapers/
+
+yazi "$WALLPAPER_DIR" --chooser-file="$file"
+
+if [ ! -s "$file" ]; then
+    rm -f "$file"
+    exit
+fi
+image=$(head -n1 "$file")
+rm -f "$file"
+
+wal -i "$image" --contrast 10 --saturate 0.2
+
+# feh "$image"

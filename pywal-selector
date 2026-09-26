@@ -13,6 +13,7 @@ fi
 image=$(head -n1 "$file")
 rm -f "$file"
 
-wal -i "$image" --contrast 10 --saturate 0.2
+# wal -i "$image" --contrast 10 --saturate 0.2
+wal -i "$image" --contrast 10 --saturate 0.2 -b 080808
 
-# feh "$image"
+sleep 1
